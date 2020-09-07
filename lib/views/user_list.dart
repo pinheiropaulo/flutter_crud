@@ -12,21 +12,22 @@ class UserList extends StatelessWidget {
     return Center(
       child: Scaffold(
         appBar: AppBar(
-            centerTitle: true,
-            title: Text("Lista De Usuários"),
-            actions: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: IconButton(
-                  icon: Icon(Icons.add),
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(
-                      AppRoutes.USER_FORM,
-                    );
-                  },
-                ),
-              )
-            ]),
+          centerTitle: true,
+          title: Text("Lista De Usuários"),
+          actions: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: IconButton(
+                icon: Icon(Icons.add),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(
+                    AppRoutes.USER_FORM,
+                  );
+                },
+              ),
+            )
+          ],
+        ),
         body: ListView.builder(
           itemCount: users.cont,
           itemBuilder: (ctx, i) => UserTile(users.byIndex(i)),
